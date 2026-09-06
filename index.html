@@ -12,184 +12,218 @@
 
 <style>
 :root{
-  --bg:#050607;
-  --panel:rgba(16,18,21,.84);
-  --panel-2:rgba(22,24,28,.92);
-  --line:rgba(255,255,255,.09);
-  --text:#f4f7f9;
-  --muted:#9ba3ad;
-  --cyan:#27d7ff;
-  --green:#31f27c;
-  --amber:#ffc857;
-  --red:#ff5f6d;
-  --shadow:0 18px 50px rgba(0,0,0,.35);
+  --maroon:#7b0000;
+  --maroon-dark:#4e0000;
+  --maroon-deep:#2b0909;
+  --gold:#d8a23a;
+  --gold-light:#f0c86a;
+  --cream:#f6f1e8;
+  --paper:#fffdf8;
+  --ink:#221b18;
+  --muted:#776b64;
+  --border:#e6ddd2;
+  --green:#22834d;
+  --red:#b42318;
+  --shadow:0 14px 35px rgba(67,38,24,.12);
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
-body{
-  overflow-x:hidden;
+html,body{
+  margin:0;min-height:100%;
+  font-family:Inter,Arial,sans-serif;
+  color:var(--ink);
   background:
-    radial-gradient(circle at 15% 5%,rgba(39,215,255,.10),transparent 30%),
-    radial-gradient(circle at 85% 15%,rgba(49,242,124,.08),transparent 28%),
-    linear-gradient(145deg,#040506,#0a0d10 45%,#050607);
+    radial-gradient(circle at 10% 0%,rgba(216,162,58,.10),transparent 28%),
+    linear-gradient(180deg,#fbf8f1 0%,#f3ede4 100%);
 }
 button{font:inherit}
 
 .topbar{
   position:sticky;top:0;z-index:1000;
-  backdrop-filter:blur(18px);
-  background:rgba(5,6,7,.75);
-  border-bottom:1px solid var(--line);
+  background:rgba(255,253,248,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 4px 18px rgba(44,23,14,.07);
 }
 .nav{
-  max-width:1500px;margin:auto;padding:16px 24px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1500px;margin:auto;padding:12px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:18px
 }
 .brand{display:flex;align-items:center;gap:12px}
 .logo{
-  width:44px;height:44px;border-radius:14px;
-  display:grid;place-items:center;font-size:22px;
-  background:linear-gradient(135deg,#132b35,#0b1014);
-  border:1px solid rgba(39,215,255,.28);
-  box-shadow:0 0 28px rgba(39,215,255,.1);
+  width:46px;height:46px;border-radius:8px;display:grid;place-items:center;
+  color:#fff;font-size:22px;background:var(--maroon);
+  border:1px solid rgba(216,162,58,.6);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.08),0 5px 14px rgba(123,0,0,.18)
 }
-.brand h1{margin:0;font-size:18px;font-weight:800;letter-spacing:.2px}
+.brand h1{margin:0;color:var(--maroon);font-size:18px;font-weight:800;letter-spacing:.15px}
 .brand span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
 
 .nav-actions{display:flex;align-items:center;gap:10px}
-.clock{font-size:13px;color:var(--muted);padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03)}
-.live-pill{
-  display:flex;align-items:center;gap:8px;
-  padding:10px 14px;border-radius:999px;
-  border:1px solid rgba(49,242,124,.25);
-  color:var(--green);background:rgba(49,242,124,.07);
-  font-weight:700;font-size:13px;
+.clock{
+  font-size:13px;color:var(--ink);padding:10px 12px;border:1px solid var(--border);
+  border-radius:8px;background:#fff
 }
-.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green);animation:pulse 1.4s infinite}
-@keyframes pulse{50%{transform:scale(1.35);opacity:.65}}
+.live-pill{
+  display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;
+  border:1px solid rgba(34,131,77,.18);color:var(--green);
+  background:#f0f8f3;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.5px
+}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(34,131,77,.45);animation:pulse 1.4s infinite}
+@keyframes pulse{50%{transform:scale(1.25);opacity:.65}}
 
 .shell{max-width:1500px;margin:auto;padding:24px}
 .hero{
   display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:18px
 }
-.hero h2{margin:0;font-size:31px;letter-spacing:-.8px}
+.hero h2{margin:0;color:var(--maroon);font-size:31px;letter-spacing:-.55px}
 .hero p{margin:7px 0 0;color:var(--muted);font-size:14px}
 .controls{display:flex;gap:10px;flex-wrap:wrap}
 .action{
-  cursor:pointer;border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.04);
-  padding:11px 14px;border-radius:12px;transition:.2s;
+  cursor:pointer;border:1px solid var(--border);color:var(--ink);background:#fff;
+  padding:11px 14px;border-radius:8px;transition:.2s;box-shadow:0 3px 9px rgba(51,27,16,.05)
 }
-.action:hover{transform:translateY(-2px);background:rgba(255,255,255,.08);border-color:rgba(39,215,255,.25)}
-.action.primary{border-color:rgba(39,215,255,.35);background:rgba(39,215,255,.10)}
+.action:hover{transform:translateY(-2px);border-color:rgba(123,0,0,.3);box-shadow:0 7px 15px rgba(51,27,16,.09)}
+.action.primary{color:#fff;border-color:var(--maroon);background:var(--maroon)}
+.action.primary:hover{background:var(--maroon-dark)}
 
-.status-grid{
-  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:14px;margin-bottom:14px
+.status-dashboard{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;
+  margin-bottom:14px;
+  background:rgba(255,253,248,.97);
+  border:1px solid var(--border);
+  border-top:4px solid var(--maroon);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
 }
+.dashboard-item{
+  min-height:118px;
+  padding:18px 20px;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.dashboard-item:nth-child(4n){border-right:0}
+.dashboard-item:nth-child(n+5){border-bottom:0}
+.dashboard-item.vehicle{grid-column:span 2}
+.dashboard-value{
+  margin-top:8px;font-size:20px;font-weight:800;color:var(--ink);
+}
+.dashboard-value.large{font-size:25px;color:var(--maroon)}
+.dashboard-sub{margin-top:7px;font-size:12px;color:var(--muted)}
+.dashboard-row{display:flex;justify-content:space-between;gap:10px;margin-top:9px;font-size:13px}
+.dashboard-row span{color:var(--muted)}
+.dashboard-row strong{color:var(--ink);text-align:right;font-weight:800}
+.vehicle-wrap{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.vehicle-left{min-width:0}
 .card{
-  background:linear-gradient(180deg,rgba(24,27,31,.88),rgba(12,14,17,.88));
-  border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
-  padding:18px;
+  background:rgba(255,253,248,.96);border:1px solid var(--border);
+  border-radius:10px;box-shadow:var(--shadow);padding:18px
 }
-.card-label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.1px;font-weight:700}
-.metric{font-size:28px;font-weight:800;margin-top:8px}
-.metric small{font-size:13px;color:var(--muted);font-weight:600}
+.card-label{
+  color:var(--maroon);font-size:11px;text-transform:uppercase;letter-spacing:1.1px;font-weight:800
+}
+.metric{font-size:28px;font-weight:800;color:var(--ink);margin-top:8px}
+.metric small{font-size:13px;color:var(--muted);font-weight:700}
 .route-text{margin-top:8px;font-size:13px;color:var(--muted)}
 .status-card{
-  position:relative;overflow:hidden
+  position:relative;overflow:hidden;
+  border-top:4px solid var(--maroon)
 }
 .status-card:after{
-  content:"";position:absolute;right:-50px;top:-80px;width:180px;height:180px;border-radius:50%;
-  background:radial-gradient(circle,rgba(39,215,255,.18),transparent 68%);
+  content:"";position:absolute;right:-60px;top:-80px;width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(123,0,0,.08),transparent 68%)
 }
 .bus-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.bus-title{font-size:24px;font-weight:800}
+.bus-title{font-size:24px;font-weight:800;color:var(--maroon)}
 .bus-sub{color:var(--muted);font-size:13px;margin-top:3px}
 .status-tag{
-  padding:8px 11px;border-radius:999px;font-size:12px;font-weight:800;
-  background:rgba(255,255,255,.05);border:1px solid var(--line)
+  padding:8px 11px;border-radius:7px;font-size:11px;font-weight:900;
+  background:#f7f4ee;border:1px solid var(--border);letter-spacing:.35px
 }
-.status-tag.transit{color:var(--green);border-color:rgba(49,242,124,.25);background:rgba(49,242,124,.08)}
-.status-tag.complete{color:var(--amber);border-color:rgba(255,200,87,.25);background:rgba(255,200,87,.08)}
+.status-tag.transit{color:var(--green);border-color:#b7ddc4;background:#eef8f1}
+.status-tag.complete{color:#9b680e;border-color:#ead5a7;background:#fff8e8}
 
 .main-grid{
   display:grid;grid-template-columns:minmax(0,2.1fr) minmax(330px,.9fr);gap:14px
 }
-.map-card{padding:0;overflow:hidden;min-height:680px}
+.map-card{padding:0;overflow:hidden;min-height:680px;border-top:4px solid var(--maroon)}
 .map-head{
   padding:15px 18px;display:flex;justify-content:space-between;align-items:center;
-  border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)
+  border-bottom:1px solid var(--border);background:#fffaf3
 }
-.section-title{font-size:14px;font-weight:800}
+.section-title{font-size:14px;font-weight:900;color:var(--maroon)}
 .section-sub{font-size:12px;color:var(--muted);margin-top:3px}
 .map-wrap{position:relative;height:610px}
-#map{width:100%;height:100%;background:#0a0d10}
-.map-float{
-  position:absolute;top:14px;right:14px;z-index:500;
-  display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end
-}
+#map{width:100%;height:100%;background:#d8d2c8}
+.map-float{position:absolute;top:14px;right:14px;z-index:500;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .map-chip{
-  padding:8px 10px;border-radius:10px;background:rgba(7,9,11,.78);
-  border:1px solid rgba(255,255,255,.09);font-size:11px;color:#dbe2e8;backdrop-filter:blur(10px)
+  padding:8px 10px;border-radius:7px;background:rgba(255,253,248,.94);
+  border:1px solid var(--border);font-size:11px;color:var(--ink);backdrop-filter:blur(8px);
+  box-shadow:0 5px 14px rgba(48,27,18,.08)
 }
-.route-card{max-height:680px;display:flex;flex-direction:column}
+.route-card{max-height:680px;display:flex;flex-direction:column;border-top:4px solid var(--gold)}
 .route-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
-.mini{
-  padding:12px;border-radius:13px;background:rgba(255,255,255,.03);border:1px solid var(--line)
-}
+.mini{padding:12px;border-radius:8px;background:#fcf8f1;border:1px solid var(--border)}
 .mini span{display:block;color:var(--muted);font-size:11px}
-.mini strong{display:block;margin-top:5px;font-size:15px}
+.mini strong{display:block;margin-top:5px;font-size:15px;color:var(--maroon)}
 .stop-list{overflow:auto;padding-right:4px}
-.stop-list::-webkit-scrollbar{width:6px}.stop-list::-webkit-scrollbar-thumb{background:#30353b;border-radius:99px}
+.stop-list::-webkit-scrollbar{width:6px}.stop-list::-webkit-scrollbar-thumb{background:#cfc3b7;border-radius:99px}
 .stop{
-  position:relative;display:flex;gap:12px;align-items:flex-start;padding:10px 8px;
-  border-radius:13px;transition:.25s
+  position:relative;display:flex;gap:12px;align-items:flex-start;padding:10px 8px;border-radius:8px;transition:.25s
 }
-.stop:hover{background:rgba(255,255,255,.04);transform:translateX(3px)}
+.stop:hover{background:#faf5ed;transform:translateX(3px)}
 .stop::before{
-  content:"";position:absolute;left:20px;top:38px;bottom:-10px;width:2px;background:rgba(255,255,255,.09)
+  content:"";position:absolute;left:20px;top:38px;bottom:-10px;width:2px;background:#e4dbd0
 }
 .stop:last-child::before{display:none}
 .stop-number{
   position:relative;z-index:2;width:28px;height:28px;flex:0 0 28px;border-radius:50%;
-  display:grid;place-items:center;font-size:11px;font-weight:800;color:white;
-  background:#252a30;border:2px solid #0d0f12;box-shadow:0 0 0 1px rgba(255,255,255,.09)
+  display:grid;place-items:center;font-size:11px;font-weight:900;color:#fff;
+  background:#a79a90;border:2px solid #fff;box-shadow:0 0 0 1px #dfd6cc
 }
-.stop-name{padding-top:4px;font-size:13px;font-weight:600}
-.stop.passed{opacity:.45}.stop.passed .stop-number{background:#4b5158}
-.stop.current{background:rgba(49,242,124,.07);box-shadow:inset 0 0 0 1px rgba(49,242,124,.16)}
+.stop-name{padding-top:4px;font-size:13px;font-weight:650;color:var(--ink)}
+.stop.passed{opacity:.48}.stop.passed .stop-number{background:#91877f}
+.stop.current{background:#fff7ea;box-shadow:inset 0 0 0 1px #ead3a8}
 .stop.current .stop-number{
-  background:var(--green);color:#031007;box-shadow:0 0 18px rgba(49,242,124,.35);animation:stopPulse 1.4s infinite
+  background:var(--gold);color:#3d2808;box-shadow:0 0 0 4px rgba(216,162,58,.13);animation:stopPulse 1.4s infinite
 }
-@keyframes stopPulse{50%{transform:scale(1.13);box-shadow:0 0 28px rgba(49,242,124,.5)}}
-.stop.upcoming .stop-number{background:#11637a}
+@keyframes stopPulse{50%{transform:scale(1.10);box-shadow:0 0 0 6px rgba(216,162,58,.09)}}
+.stop.upcoming .stop-number{background:var(--maroon)}
 
-.bottom-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px
-}
 .info-row{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:13px}
 .info-row span{color:var(--muted)}
-.info-row strong{font-weight:700;text-align:right}
+.info-row strong{font-weight:800;text-align:right;color:var(--ink)}
 .progress-wrap{margin-top:14px}
-.progress-bar{height:8px;background:#1d2227;border-radius:99px;overflow:hidden}
-.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green));border-radius:99px;box-shadow:0 0 15px rgba(39,215,255,.32);transition:width .5s}
+.progress-bar{height:8px;background:#ece5dc;border-radius:99px;overflow:hidden}
+.progress-fill{
+  height:100%;width:0;background:linear-gradient(90deg,var(--maroon),var(--gold));
+  border-radius:99px;box-shadow:0 0 9px rgba(123,0,0,.18);transition:width .5s
+}
 .latlng{font-variant-numeric:tabular-nums}
 
 .bus-marker{
-  width:52px;height:52px;border-radius:18px;display:grid;place-items:center;
-  background:linear-gradient(145deg,#163746,#0b2029);border:2px solid rgba(39,215,255,.85);
-  box-shadow:0 0 0 5px rgba(39,215,255,.08),0 0 30px rgba(39,215,255,.32);
+  width:52px;height:52px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(145deg,var(--maroon),#4c0505);border:2px solid var(--gold-light);
+  box-shadow:0 0 0 5px rgba(123,0,0,.09),0 0 24px rgba(123,0,0,.25);
   font-size:25px;animation:busFloat 2s ease-in-out infinite
 }
-@keyframes busFloat{50%{transform:translateY(-5px)}}
+@keyframes busFloat{50%{transform:translateY(-4px)}}
 
-.leaflet-control-attribution{background:rgba(6,8,10,.75)!important;color:#aeb7bf!important}
-.leaflet-control-attribution a{color:#7ddfff!important}
-.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#101316;color:#f5f7f8;border:1px solid #252a30}
+/* Give the map a clean, slightly warm institutional feel while retaining live details */
+.leaflet-control-attribution{background:rgba(255,253,248,.88)!important;color:#6f655e!important}
+.leaflet-control-attribution a{color:var(--maroon)!important}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#fffdf8;color:var(--ink);border:1px solid var(--border)}
 .leaflet-popup-content{font-size:13px}
+.leaflet-control-zoom a{color:var(--maroon)!important;background:#fffdf8!important;border-bottom-color:var(--border)!important}
 
 @media(max-width:1100px){
-  .status-grid{grid-template-columns:1fr 1fr}
+  .status-dashboard{grid-template-columns:1fr 1fr}
+  .dashboard-item{border-right:1px solid var(--border)!important}
+  .dashboard-item:nth-child(2n){border-right:0!important}
+  .dashboard-item.vehicle{grid-column:span 2}
   .main-grid{grid-template-columns:1fr}
   .route-card{max-height:none}
   .map-wrap{height:520px}
@@ -198,7 +232,9 @@ button{font:inherit}
   .nav{padding:12px 16px}.clock{display:none}
   .shell{padding:16px}.hero{align-items:flex-start;flex-direction:column}
   .hero h2{font-size:25px}
-  .status-grid,.bottom-grid{grid-template-columns:1fr}
+  .status-dashboard{grid-template-columns:1fr}
+  .dashboard-item{grid-column:span 1!important;border-right:0!important;border-bottom:1px solid var(--border)!important}
+  .dashboard-item:last-child{border-bottom:0!important}
   .map-wrap{height:450px}.map-card{min-height:0}
 }
 </style>
@@ -224,8 +260,8 @@ button{font:inherit}
 <main class="shell">
   <section class="hero">
     <div>
-      <h2>Bus K1 Command Center</h2>
-      <p>Real-time location, route progress and arrival information.</p>
+      <h2>College Bus K1 • Live Tracking</h2>
+      <p>Mauli-style institutional dashboard • real-time route progress and arrival information.</p>
     </div>
     <div class="controls">
       <button class="action primary" id="centerBusBtn">🎯 Center Bus</button>
@@ -234,36 +270,61 @@ button{font:inherit}
     </div>
   </section>
 
-  <section class="status-grid">
-    <div class="card status-card">
-      <div class="bus-head">
-        <div>
+  <section class="status-dashboard" aria-label="Bus live status">
+    <div class="dashboard-item vehicle">
+      <div class="vehicle-wrap">
+        <div class="vehicle-left">
           <div class="card-label">Vehicle</div>
-          <div class="bus-title">🚌 Bus <span id="busId">K1</span></div>
-          <div class="bus-sub">Khamgaon ↔ College</div>
+          <div class="dashboard-value large">🚌 Bus <span id="busId">K1</span></div>
+          <div class="dashboard-sub">Khamgaon ↔ College</div>
+          <div class="dashboard-row"><span>Direction</span><strong id="tripDirection">⏳ DETECTING</strong></div>
+          <div class="dashboard-row"><span>Last Updated</span><strong id="updated">--</strong></div>
         </div>
         <div id="tripStatus" class="status-tag">⚪ NOT STARTED</div>
       </div>
-      <div class="route-text"><strong>Direction:</strong> <span id="tripDirection">⏳ DETECTING</span></div>
-      <div class="route-text"><strong>Last Updated:</strong> <span id="updated">--</span></div>
     </div>
 
-    <div class="card">
+    <div class="dashboard-item">
       <div class="card-label">Current Speed</div>
-      <div class="metric"><span id="speed">--</span> <small>km/h</small></div>
-      <div class="route-text">Live Firebase reading</div>
+      <div class="dashboard-value"><span id="speed">--</span> <span style="font-size:13px;color:var(--muted)">km/h</span></div>
+      <div class="dashboard-sub">Live Firebase reading</div>
     </div>
 
-    <div class="card">
+    <div class="dashboard-item">
       <div class="card-label">Next Stop</div>
-      <div class="metric" id="nextStop" style="font-size:20px">--</div>
-      <div class="route-text">ETA: <strong id="nextStopEta">--</strong></div>
+      <div class="dashboard-value" id="nextStop">--</div>
+      <div class="dashboard-sub">ETA: <strong id="nextStopEta">--</strong></div>
     </div>
 
-    <div class="card">
+    <div class="dashboard-item">
       <div class="card-label">Nearest Stop</div>
-      <div class="metric" id="nearestStop" style="font-size:20px">--</div>
-      <div class="route-text">Distance: <strong id="nearestDistance">--</strong></div>
+      <div class="dashboard-value" id="nearestStop">--</div>
+      <div class="dashboard-sub">Distance: <strong id="nearestDistance">--</strong></div>
+    </div>
+
+    <div class="dashboard-item">
+      <div class="card-label">Trip Direction</div>
+      <div class="dashboard-value" id="directionMetric">DETECTING</div>
+      <div class="dashboard-sub">Automatic bidirectional lifecycle</div>
+    </div>
+
+    <div class="dashboard-item">
+      <div class="card-label">Trip Status</div>
+      <div class="dashboard-value" id="statusMetric">NOT STARTED</div>
+      <div class="dashboard-sub">Endpoint based confirmation</div>
+    </div>
+
+    <div class="dashboard-item">
+      <div class="card-label">Coordinates</div>
+      <div class="dashboard-row"><span>Latitude</span><strong class="latlng" id="currentLat">--</strong></div>
+      <div class="dashboard-row"><span>Longitude</span><strong class="latlng" id="currentLng">--</strong></div>
+    </div>
+
+    <div class="dashboard-item">
+      <div class="card-label">Next Stop Details</div>
+      <div class="dashboard-row"><span>Stop</span><strong id="nextStop2">--</strong></div>
+      <div class="dashboard-row"><span>Distance</span><strong id="nextStopDistance2">--</strong></div>
+      <div class="dashboard-row"><span>ETA</span><strong id="nextStopEta2">--</strong></div>
     </div>
   </section>
 
@@ -300,33 +361,6 @@ button{font:inherit}
       </div>
       <div class="stop-list" id="stopList">Loading route...</div>
     </aside>
-  </section>
-
-  <section class="bottom-grid">
-    <div class="card">
-      <div class="card-label">Trip Direction</div>
-      <div class="metric" id="directionMetric" style="font-size:20px">DETECTING</div>
-      <div class="route-text">Automatic bidirectional lifecycle</div>
-    </div>
-
-    <div class="card">
-      <div class="card-label">Trip Status</div>
-      <div class="metric" id="statusMetric" style="font-size:20px">NOT STARTED</div>
-      <div class="route-text">Endpoint based confirmation</div>
-    </div>
-
-    <div class="card">
-      <div class="card-label">Coordinates</div>
-      <div class="info-row"><span>Latitude</span><strong class="latlng" id="currentLat">--</strong></div>
-      <div class="info-row"><span>Longitude</span><strong class="latlng" id="currentLng">--</strong></div>
-    </div>
-
-    <div class="card">
-      <div class="card-label">Next Stop</div>
-      <div class="info-row"><span>Stop</span><strong id="nextStop2">--</strong></div>
-      <div class="info-row"><span>Distance</span><strong id="nextStopDistance2">--</strong></div>
-      <div class="info-row"><span>ETA</span><strong id="nextStopEta2">--</strong></div>
-    </div>
   </section>
 </main>
 
